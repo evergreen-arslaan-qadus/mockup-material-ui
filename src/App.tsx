@@ -1,15 +1,24 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import Card from './components/Card';
 
 const App = () => {
 
     return (
-        <Grid container>
-            <Grid item md={4}>
+        <Box display="flex" justifyContent="space-between" padding="3rem">
+            <Box>
                 <Card />
-            </Grid>
-        </Grid>
+            </Box>
+            <Box>
+                <Card />
+            </Box>
+            <Box>
+                <Card />
+            </Box>
+            <Box>
+                <Card />
+            </Box>
+        </Box>
     );
 }
 
