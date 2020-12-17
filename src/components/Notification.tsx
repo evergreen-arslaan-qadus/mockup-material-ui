@@ -1,13 +1,10 @@
 import React from 'react'
-import { Box, Divider, Paper, Typography } from '@material-ui/core'
-import { Save, SaveOutlined, WatchLater } from '@material-ui/icons';
+import { Box, Divider, Typography } from '@material-ui/core'
+import { SaveOutlined, WatchLater } from '@material-ui/icons';
 
 const Notification = () => {
     return (
         <>
-            <Box paddingTop="2rem" paddingBottom="2rem">
-                <Typography variant="subtitle1">Recent recieved notifications</Typography>
-            </Box>
             <Box paddingY="0.25rem">
                 <Typography color="secondary" variant="body1"><span>•</span> SMITH, Adam</Typography>
             </Box>
