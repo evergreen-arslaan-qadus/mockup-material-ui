@@ -1,23 +1,17 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
-import Card from './components/Card';
+import InfoPanel from './components/InfoPanel';
+import Sidebar from './components/Sidebar';
+import Dashboard from './pages/Dashboard';
 
 const App = () => {
-
     return (
-        <Box display="flex" justifyContent="space-between" padding="3rem">
-            <Box>
-                <Card />
+        <Box display="flex">
+            <Sidebar />
+            <Box paddingX="4rem" paddingY="2rem" display="flex" flexDirection="column" minWidth="70vw">
+                <Dashboard />
             </Box>
-            <Box>
-                <Card />
-            </Box>
-            <Box>
-                <Card />
-            </Box>
-            <Box>
-                <Card />
-            </Box>
+            <InfoPanel />
         </Box>
     );
 }
