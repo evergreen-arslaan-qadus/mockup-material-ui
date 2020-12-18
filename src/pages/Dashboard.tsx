@@ -1,9 +1,11 @@
-import React from 'react'
-import { Box, Button, Typography } from '@material-ui/core';
+import React, { useState } from 'react'
+import { Box, Button, Collapse, Slide, Typography } from '@material-ui/core';
 import { ArrowForward } from '@material-ui/icons';
 import Card from '../components/Card';
 
 const Dashboard = () => {
+    const [open, setOpen] = useState(false);
+
     return (
         <>
             <Box>
@@ -16,20 +18,28 @@ const Dashboard = () => {
                     Last Visited Patients
                 </Typography>
             </Box>
-            <Box display="flex" justifyContent="space-between">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+            <Box display="flex" justifyContent="space-between" padding="1rem">
+                <Card parentOpen={true} />
+                <Card parentOpen={true} />
+                <Card parentOpen={true} />
+                <Card parentOpen={true} />
             </Box>
+            {open && (
+                <Box display="flex" justifyContent="space-between" padding="1rem">
+                    {[0, 1, 2, 3].map(item => (
+                        <Card key={item} parentOpen={open} item={item} />
+                    ))}
+                </Box>
+            )}
             <Box display="flex" justifyContent="flex-end" paddingTop="1rem">
                 <Button
+                    onClick={() => setOpen(!open)}
                     variant="contained"
                     color="default"
                     style={{ borderRadius: 25, color: 'white', backgroundColor: '#1c9e29' }}
                     endIcon={<ArrowForward />}
                 >
-                    See all patients
+                    {open ? "Hide" : "See"} all patients
                 </Button>
             </Box>
         </>
