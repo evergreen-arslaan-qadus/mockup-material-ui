@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Button, Collapse, Slide, Typography } from '@material-ui/core';
+import { Box, Button, Typography } from '@material-ui/core';
 import { ArrowForward } from '@material-ui/icons';
 import Card from '../components/Card';
 

@@ -2,16 +2,12 @@ import React, { useState } from 'react'
 import {
     Card,
     CardContent,
-    Collapse,
     Typography,
     CardActions,
     Button,
     makeStyles,
     Divider,
     Grid,
-    Modal,
-    Box,
-    Paper,
     Dialog,
     Slide,
     DialogTitle,
@@ -50,10 +46,6 @@ interface IProps {
 const CardComponent = ({ item, parentOpen }: IProps) => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
-
-    const Transition = React.forwardRef(function Transition(props, ref) {
-        return <Slide direction="up" ref={ref} />;
-    });
 
     return (
         <Slide direction="down" in={parentOpen} timeout={(item || 0) * 1000}>
