@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Button, Typography } from '@material-ui/core';
 import { ArrowForward } from '@material-ui/icons';
-import Card from '../components/Card';
+import Card from '../components/molecules/Card';
 
 const Dashboard = () => {
     const [open, setOpen] = useState(false);
