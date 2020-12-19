@@ -1,42 +1,21 @@
 import React from 'react'
-
-enum Size {
-    xsmall,
-    small,
-    medium,
-    large,
-    xlarge
-}
-
-enum Variant {
-    icon,
-    primay,
-    secondary,
-    light,
-    discreet
-}
-
-enum Color {
-    default,
-    tentative,
-    destructive,
-    execpt
-}
-
-interface IProps {
-    children: string
-    size?: Size
+import { Button as MaterialButton } from '@material-ui/core';
+export interface ButtonProps {
+    children: React.ReactNode
+    size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
     icon?: string
-    variant?: Variant
-    color?: Color
+    variant?: 'icon' | 'primay' | 'secondary' | 'light' | 'discree'
+    color?: 'default' | 'tentative' | 'destructive' | 'execpt'
+    label: string
+    rightIcon?: React.ReactElement
+    leftIcon?: React.ReactElement
 }
 
-const Button = ({ children }: IProps) => {
+export const Button = ({ children, label, variant, }: ButtonProps): React.ReactElement<ButtonProps> => {
     return (
-        <Button>
+        <MaterialButton variant="contained">
+            {label}
             {children}
-        </Button>
+        </MaterialButton>
     )
 }
-
-export default Button
