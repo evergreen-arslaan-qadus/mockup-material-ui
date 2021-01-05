@@ -5,12 +5,15 @@ export interface ButtonProps extends MUIButtonProps {
     children: React.ReactNode
     icon?: string
     rounded?: boolean
+    variant?: "contained" | "text" | "outlined"
+
 }
 
 const Button = (props: ButtonProps): React.ReactElement<ButtonProps> => {
     const {
         children,
-        rounded = false
+        rounded = false,
+        variant = "contained"
     } = props;
 
     return (
@@ -18,6 +21,7 @@ const Button = (props: ButtonProps): React.ReactElement<ButtonProps> => {
             style={{
                 borderRadius: rounded ? '100px' : '4px'
             }}
+            variant={variant}
             {...props}
         >
             {children}
