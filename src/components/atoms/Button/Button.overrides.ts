@@ -1,4 +1,4 @@
-import { green, grey } from "@material-ui/core/colors";
+import { green, grey, red } from "@material-ui/core/colors";
 import { Overrides } from "@material-ui/core/styles/overrides";
 
 export const buttonStyles: Overrides = {
@@ -34,6 +34,34 @@ export const buttonStyles: Overrides = {
             },
             "&:active": {
                 backgroundColor: green[700],
+            }
+        },
+        textSecondary: {
+            "&:hover": {
+                backgroundColor: red[50]
+            },
+            "&:active": {
+                backgroundColor: red[100],
+            }
+        },
+        outlinedSecondary: {
+            "&:hover": {
+                backgroundColor: grey[200]
+            },
+            "&:active": {
+                backgroundColor: grey[300],
+                border: '1px solid',
+                borderColor: red[500]
+            }
+        },
+        containedSecondary: {
+            color: 'white',
+            backgroundColor: red[500],
+            "&:hover": {
+                backgroundColor: red[300]
+            },
+            "&:active": {
+                backgroundColor: red[700],
             }
         },
     }
