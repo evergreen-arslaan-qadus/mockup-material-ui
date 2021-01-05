@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button as MaterialButton, makeStyles } from '@material-ui/core';
+import { Button as MaterialButton, withStyles, WithStyles } from '@material-ui/core';
+import { styles } from './Button.style';
 export interface ButtonProps {
     children: React.ReactNode
     size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
@@ -11,34 +12,16 @@ export interface ButtonProps {
     leftIcon?: React.ReactElement
 }
 
-const useStyles = makeStyles(theme => {
-    return {
-        root: {
-            background: theme.palette.greens[100],
-            borderRadius: 3,
-            border: 0,
-            color: 'white',
-            height: 48,
-            padding: '0 30px',
-            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-        },
-        label: {
-            textTransform: 'capitalize',
-        },
-    }
-});
-
-export const Button = ({ children, label, variant }: ButtonProps): React.ReactElement<ButtonProps> => {
-    const classes = useStyles();
-
+const Button = ({ children, label, variant, classes }: ButtonProps & WithStyles<typeof styles>): React.ReactElement<ButtonProps> => {
     return (
         <MaterialButton
             classes={classes}
             variant="contained"
-            color="primary"
             disableRipple>
             {label}
             {children}
         </MaterialButton>
     )
 }
+
+export default withStyles(styles)(Button);
