@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Box, Button, Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { ArrowForward } from '@material-ui/icons';
 import Card from '../components/molecules/Card';
+import { Button } from '../components/atoms/Button';
 
 const Dashboard = () => {
     const [open, setOpen] = useState(false);
@@ -34,8 +35,6 @@ const Dashboard = () => {
             <Box display="flex" justifyContent="flex-end" paddingTop="1rem">
                 <Button
                     onClick={() => setOpen(!open)}
-                    variant="contained"
-                    color="default"
                     style={{ borderRadius: 25, color: 'white', backgroundColor: '#1c9e29' }}
                     endIcon={<ArrowForward />}
                 >

@@ -17,13 +17,13 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
     label: 'Click Me',
-    variant: 'primary'
+    color: 'primary'
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
     label: 'Click Me',
-    variant: 'secondary'
+    color: 'secondary'
 };
 
 export const Large = Template.bind({});

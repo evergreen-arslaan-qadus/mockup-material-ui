@@ -4,7 +4,7 @@ import { ButtonProps } from './Button';
 import colorStyleGenerator from '../../../helpers/styleGenerator'
 
 const color = (props: ButtonProps, theme: Theme) => {
-    if (props.variant === 'primary') {
+    if (props.color === 'primary') {
         colorStyleGenerator.root = {
             backgroundColor: theme.palette.primary.main,
             color: 'white',
@@ -21,7 +21,7 @@ const color = (props: ButtonProps, theme: Theme) => {
         }
     }
 
-    if (props.variant === 'secondary') {
+    if (props.color === 'secondary') {
         colorStyleGenerator.root = {
             border: '2px solid',
             backgroundColor: 'white',
