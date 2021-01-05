@@ -1,6 +1,18 @@
 import { createMuiTheme } from "@material-ui/core";
+import { buttonStyles } from './components/atoms/Button/Button.overrides';
 
 export const theme = createMuiTheme({
+    overrides: {
+        ...buttonStyles,
+    },
+    props: {
+        MuiButton: {
+            disableElevation: true,
+        },
+        MuiButtonBase: {
+            disableRipple: true,
+        }
+    },
     palette: {
         primary: {
             main: '#39b54a',
