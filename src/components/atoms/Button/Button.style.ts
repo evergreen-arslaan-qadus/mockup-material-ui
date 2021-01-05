@@ -56,7 +56,7 @@ export const useStyles = (props: ButtonProps) => {
             padding: `${theme.spacing(1)}px ${theme.spacing(3)}px`,
             border: '2px solid',
             fontWeight: 'bolder',
-            borderRadius: 100,
+            borderRadius: props.rounded ? 100 : 0,
 
             '&:hover': {
                 ...colors.hover,

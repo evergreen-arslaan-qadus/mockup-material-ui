@@ -33,9 +33,6 @@ const useStyles = makeStyles({
     cardContentItem: {
         padding: '8px 0px',
     },
-    button: {
-        color: 'green'
-    }
 });
 
 interface IProps {
@@ -78,7 +75,7 @@ const CardComponent = ({ item, parentOpen }: IProps) => {
                         <Divider className={classes.space} />
                     </CardContent>
                     <CardActions>
-                        <Button size="small" className={classes.button} onClick={() => setOpen(!open)}>See details</Button>
+                        <Button size="small" variant="outlined" color="primary" onClick={() => setOpen(!open)}>See details</Button>
                     </CardActions>
                 </Grid>
             </Grid>
@@ -97,10 +94,10 @@ const CardComponent = ({ item, parentOpen }: IProps) => {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setOpen(!open)} color="primary">
+                    <Button onClick={() => setOpen(!open)}>
                         Disagree
                     </Button>
-                    <Button onClick={() => setOpen(!open)} color="primary">
+                    <Button onClick={() => setOpen(!open)}>
                         Agree
                     </Button>
                 </DialogActions>

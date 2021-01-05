@@ -8,11 +8,12 @@ export interface ButtonProps extends MUIButtonProps {
     label?: string
     rightIcon?: React.ReactElement
     leftIcon?: React.ReactElement
+    rounded?: boolean
 }
 
 const Button = (props: ButtonProps): React.ReactElement<ButtonProps> => {
-    const { children, label, leftIcon, rightIcon, color = "primary" } = props;
-    const classes = useStyles(props);
+    const { children, label, leftIcon, rightIcon, color = "primary", rounded = true } = props;
+    const classes = useStyles({ ...props, rounded });
 
     return (
         <MaterialButton
