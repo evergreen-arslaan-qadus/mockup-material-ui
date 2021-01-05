@@ -1,27 +1,30 @@
-import React from 'react'
-import { Button as MaterialButton, withStyles, WithStyles } from '@material-ui/core';
-import { styles } from './Button.style';
+import React from 'react';
+import { Button as MaterialButton } from '@material-ui/core';
+import { useStyles } from './Button.style';
+
 export interface ButtonProps {
     children: React.ReactNode
     size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
     icon?: string
-    variant?: 'icon' | 'primay' | 'secondary' | 'light' | 'discree'
+    variant?: "primary" | "secondary" | "default"
     color?: 'default' | 'tentative' | 'destructive' | 'execpt'
     label: string
     rightIcon?: React.ReactElement
     leftIcon?: React.ReactElement
 }
 
-const Button = ({ children, label, variant, classes }: ButtonProps & WithStyles<typeof styles>): React.ReactElement<ButtonProps> => {
+const Button = (props: ButtonProps): React.ReactElement<ButtonProps> => {
+    const { children, label, leftIcon, rightIcon } = props;
+    const classes = useStyles(props);
+
     return (
-        <MaterialButton
-            classes={classes}
-            variant="contained"
-            disableRipple>
+        <MaterialButton classes={classes} disableRipple>
+            {leftIcon}
             {label}
             {children}
+            {rightIcon}
         </MaterialButton>
     )
 }
 
-export default withStyles(styles)(Button);
+export default Button;
